@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(24, 22, 22);
+}
+
+.gallery {
+    background-color: rgb(24, 22, 22);
+    width: 80%;
+    margin: 60px auto;
+    column-count: 4;
+    font-family: arial;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 16px;
+}
+
+.gallery-item figure {
+    margin: 0;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.gallery-item img:hover {
+    filter: brightness(0.7);
+    cursor: pointer;
+}
+
+.gallery-item p {
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 8px;
+}
+
+@media screen and (max-width: 500px) {
+    .gallery {
+        column-count: 1;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 700px) {
+    .gallery {
+        column-count: 2;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 900px) {
+    .gallery {
+        column-count: 3;
+    }
+}
