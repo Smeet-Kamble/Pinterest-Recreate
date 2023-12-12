@@ -1,5 +1,11 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 body{
     background-color: rgb(24, 22, 22);
+    font-family: sans-serif;
 }
 
 .gallery {

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/profile.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-zinc-800 overflow-x-hidden" >
-    <div class="nav w-full px-10 py-3 bg-zinc-800 flex items-center justify-between text-white">
+<body>
+    <!-- NavBar -->
+    <div class="nav w-full px-10 py-3 flex items-center justify-between text-white">
         <!-- <h3>Pinterest</h3> -->
         <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="w-10 ">
         <div class="flex items-center justify-between gap-10">
@@ -20,6 +20,7 @@
         </div>
     </div>
 
+    <!-- Profile Details -->
     <div class="container-head">
         <div class="card-head">
             <div class="card-head-header">
@@ -65,16 +66,18 @@
     </div>
 
     <!-- My Posts -->
-    <div class="container  mb-10 px-5">
-        <div class="cards flex">
-            <% user.posts.forEach(function (post){ %>
-                <div class="card" style="width: 18rem;">
-                    <img src="/images/uploads/<%= post.image %>" class="card-img-top" alt="all designs cover img">
-                    <div class="card-body">
-                      <h5 class="card-title"><%= post.imgText %></h5>
-                    </div>
+    <div class="feed-container">
+        <div class="gallery">
+            <% if(locals.user.posts){ %>
+              <% user.posts.forEach(post => { %>
+                <div class="gallery-item">
+                  <figure>
+                    <img src="/images/uploads/<%= post.image %>" alt="img" />
+                  </figure>
+                  <p><%= post.imgText %></p>
                 </div>
-            <% }) %>
+              <% }); %>
+            <% } %>  
         </div>
     </div>
 
@@ -87,6 +90,5 @@
             document.querySelector("#pic-upload-form").submit();
         });        
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

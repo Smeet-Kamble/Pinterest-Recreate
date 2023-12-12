@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+  <!-- NavBar -->
   <div class="nav w-full px-10 py-3  flex items-center justify-between text-white">
     <!-- <h3>Pinterest</h3> -->
     <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="w-10 ">
@@ -17,6 +18,8 @@
         <a href="/logout" class="px-3 py-1 bg-red-700 text-white rounded-lg">Logout</a>
     </div>
   </div>
+
+  <!-- All posts -->
   <div class="feed-container">
       <div class="gallery">
           <% if(locals.posts){ %>
